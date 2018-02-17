@@ -1,0 +1,23 @@
+html {
+  font-size: 62.5%;
+}
+
+$block-font-sizes: (
+  base: 1.1rem,
+  small: .8rem,
+  large: 1.4rem
+);
+
+.block {
+  &--base-type {
+    font-size: map-get($block-font-sizes, base);
+  }
+
+  &--small-type {
+
+  }
+
+  &--big-type {
+
+  }
+}

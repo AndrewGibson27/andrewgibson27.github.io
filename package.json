@@ -1,0 +1,22 @@
+{
+  "name": "andrewgibson27.github.io",
+  "version": "1.0.0",
+  "description": "My portfolio website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndrewGibson27/andrewgibson27.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "jekyll"
+  ],
+  "author": "@AndrewGibson27",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndrewGibson27/andrewgibson27.github.io/issues"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "sass-mq": "^4.0.2"
+  }
+}

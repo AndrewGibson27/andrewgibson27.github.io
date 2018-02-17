@@ -1,7 +1,6 @@
 title: andrewgibson27.github.io
 email: atgibson27@gmail.com
 description: My portfolio website
-baseurl: ""
 url: "https://andrewgibson27.github.io"
 twitter_username: andrewgibson27
 github_username:  andrewgibson27
@@ -9,3 +8,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+sass:
+  load_paths:
+      - _sass
+      - node_modules
