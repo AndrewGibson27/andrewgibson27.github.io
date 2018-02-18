@@ -2,12 +2,10 @@
 ---
 
 // vendor
-@import '../node_modules/sass-mq/_mq';
-{% include normalize.css %}
+{% include css/normalize.css %}
 
 // mine
+@import 'reset';
+@import 'responsive';
 @import 'typography';
-
-body {
-  background-color: red;
-}
+@import 'blocks';

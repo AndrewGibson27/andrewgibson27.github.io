@@ -2,22 +2,42 @@ html {
   font-size: 62.5%;
 }
 
-$block-font-sizes: (
-  base: 1.1rem,
-  small: .8rem,
-  large: 1.4rem
-);
+.h-block-font-size {
+  font-size: var(--fontSize);
+  $extend-name: h-block-font-size;
 
-.block {
-  &--base-type {
-    font-size: map-get($block-font-sizes, base);
+  &--base {
+    @extend .#{$extend-name};
+    --fontSize: 1.3rem;
   }
 
-  &--small-type {
-
+  &--small {
+    @extend .#{$extend-name};
+    --fontSize: .8rem;
   }
 
-  &--big-type {
+  &--large {
+    @extend .#{$extend-name};
+    --fontSize: 1.8rem;
+  }
+}
 
+.h-cmpnt-font-size {
+  font-size: var(--fontSize);
+  $extend-name: h-cmpnt-font-size;
+
+  &--base {
+    @extend .#{$extend-name};
+    --fontSize: 1em;
+  }
+
+  &--small {
+    @extend .#{$extend-name};
+    --fontSize: .8em;
+  }
+
+  &--large {
+    @extend .#{$extend-name};
+    --fontSize: 1.2em;
   }
 }
