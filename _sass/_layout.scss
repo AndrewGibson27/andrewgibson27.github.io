@@ -1,0 +1,7 @@
+.l-block {
+  &-size {
+    &--large {
+      font-size: var(--blockSizeLarge);
+    }
+  }
+}

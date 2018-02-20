@@ -1,0 +1,31 @@
+/**
+  We want to use custom properties whenever possible. However,
+  Sass mixins don't get along well with those, so we also define
+  the values as Sass variables for those edge cases.
+*/
+
+$block-size-small: 1rem;
+$block-size-base: 2rem;
+$block-size-large: 3rem;
+
+$cmpnt-size-tiny: .7em;
+$cmpnt-size-smaller: 1em;
+$cmpnt-size-small: 1.3em;
+$cmpnt-size-base: 1.6em;
+$cmpnt-size-large: 1.9em;
+$cmpnt-size-larger: 2.2em;
+$cmpnt-size-mega: 2.5em;
+
+:root {
+  --blockSizeSmall: 1rem;
+  --blockSizeBase: 2rem;
+  --blockSizeLarge: 3rem;
+
+  --cmpntSizeTiny: .7em;
+  --cmpntSizeSmaller: 1em;
+  --cmpntSizeSmall: 1.3em;
+  --cmpntSizeBase: 1.6em;
+  --cmpntSizeLarge: 1.9em;
+  --cmpntSizeLarger: 2.2em;
+  --cmpntSizeMega: 2.5em;
+}

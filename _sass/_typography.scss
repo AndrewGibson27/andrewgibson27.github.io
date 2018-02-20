@@ -1,43 +1,46 @@
+$base-size: 10;
+
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function get-multiplier($numerator) {
+  @return ceil($numerator / $base-size);
+}
+
+@function vertical-rhythm($size) {
+  $size-in-px: $base-size * strip-unit($size);
+  $multiplier: get-multiplier($size-in-px);
+
+  @return ($multiplier * $base-size) / $size-in-px + em;
+}
+
 html {
   font-size: 62.5%;
+  line-height: 1.5;
 }
 
-.h-block-font-size {
-  font-size: var(--fontSize);
-  $extend-name: h-block-font-size;
+.t-header {
+  &-primary {
+    $extension: t-header-primary;
+    font-size: var(--cmpntSizeMega);
+    margin-bottom: vertical-rhythm($cmpnt-size-mega);
 
-  &--base {
-    @extend .#{$extend-name};
-    --fontSize: 1.3rem;
-  }
-
-  &--small {
-    @extend .#{$extend-name};
-    --fontSize: .8rem;
-  }
-
-  &--large {
-    @extend .#{$extend-name};
-    --fontSize: 1.8rem;
+    &--blue {
+      @extend .#{$extension};
+      color: blue;
+    }
   }
 }
 
-.h-cmpnt-font-size {
-  font-size: var(--fontSize);
-  $extend-name: h-cmpnt-font-size;
-
-  &--base {
-    @extend .#{$extend-name};
-    --fontSize: 1em;
-  }
-
-  &--small {
-    @extend .#{$extend-name};
-    --fontSize: .8em;
-  }
-
-  &--large {
-    @extend .#{$extend-name};
-    --fontSize: 1.2em;
+.t-body {
+  &-basic {
+    $extension: t-body-basic;
+    font-size: var(--cmpntSizeSmaller);
+    margin-bottom: vertical-rhythm($cmpnt-size-smaller);
   }
 }
