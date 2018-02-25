@@ -21,26 +21,39 @@ $base-size: 10;
 
 html {
   font-size: 62.5%;
-  line-height: 1.5;
+  line-height: 1.4;
+
+  @media screen and (max-width: 800px) {
+    font-size: 50%;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 40%;
+  }
 }
 
-.t-header {
-  &-primary {
-    $extension: t-header-primary;
+.t {
+  &-title {
     font-size: var(--cmpntSizeMega);
     margin-bottom: vertical-rhythm($cmpnt-size-mega);
+  }
 
-    &--blue {
-      @extend .#{$extension};
-      color: blue;
-    }
+  &-hed {
+    font-size: var(--cmpntSizeLarge);
+    margin-bottom: vertical-rhythm($cmpnt-size-large);
+  }
+
+  &-subhed {
+    font-size: var(--cmpntSizeBase);
+    margin-bottom: vertical-rhythm($cmpnt-size-base);
+  }
+
+  &-body {
+    font-size: var(--cmpntSizeSmall);
+    margin-bottom: vertical-rhythm($cmpnt-size-small);
   }
 }
 
-.t-body {
-  &-basic {
-    $extension: t-body-basic;
-    font-size: var(--cmpntSizeSmaller);
-    margin-bottom: vertical-rhythm($cmpnt-size-smaller);
-  }
+[class^=t-]:last-child {
+  margin-bottom: 0;
 }

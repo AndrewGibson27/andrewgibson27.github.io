@@ -1,7 +1,49 @@
-.l-block {
-  &-size {
-    &--large {
-      font-size: var(--blockSizeLarge);
+@mixin create-columns($int) {
+  grid-template-columns: repeat($int, 1fr);
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.l {
+  &-master {
+    &-container {
+      display: grid;
+      grid-auto-rows: minmax(100vh, auto);
+      grid-template-areas:
+        'hero'
+        'eng'
+        'viz';
+    }
+
+    &-area {
+      &--hero {
+        grid-area: hero;
+      }
+
+      &--eng {
+        grid-area: eng;
+      }
+
+      &--viz {
+        grid-area: viz;
+      }
+    }
+  }
+
+  &-wrapper {
+    $extension: l-wrapper;
+    display: grid;
+
+    &--two-col {
+      @extend .#{$extension};
+      @include create-columns(2);
+    }
+
+    &--three-col {
+      @extend .#{$extension};
+      @include create-columns(3);
     }
   }
 }

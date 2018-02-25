@@ -4,9 +4,9 @@
   the values as Sass variables for those edge cases.
 */
 
-$block-size-small: 1rem;
-$block-size-base: 2rem;
-$block-size-large: 3rem;
+$block-size-small: 2.3rem;
+$block-size-base: 2.7rem;
+$block-size-large: 3.1rem;
 
 $cmpnt-size-tiny: .7em;
 $cmpnt-size-smaller: 1em;
@@ -17,9 +17,9 @@ $cmpnt-size-larger: 2.2em;
 $cmpnt-size-mega: 2.5em;
 
 :root {
-  --blockSizeSmall: 1rem;
-  --blockSizeBase: 2rem;
-  --blockSizeLarge: 3rem;
+  --blockSizeSmall: 2.3rem;
+  --blockSizeBase: 2.7rem;
+  --blockSizeLarge: 3.1rem;
 
   --cmpntSizeTiny: .7em;
   --cmpntSizeSmaller: 1em;
