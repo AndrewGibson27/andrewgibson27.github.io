@@ -2,28 +2,41 @@
   &-size {
     &--large {
       font-size: var(--blockSizeLarge);
+      padding: calc(var(--blockSizeLarge) * 2) calc(var(--blockSizeLarge) * 2);
+
+      @media screen and (max-width: 800px) {
+        padding: calc(var(--blockSizeLarge) * 2) var(--blockSizeLarge);
+      }
     }
 
     &--base {
       font-size: var(--blockSizeBase);
+      padding: calc(var(--blockSizeBase) * 2) calc(var(--blockSizeBase) * 2);
+
+      @media screen and (max-width: 800px) {
+        padding: calc(var(--blockSizeBase) * 2) var(--blockSizeBase);
+      }
     }
 
     &--small {
       font-size: var(--blockSizeSmall);
+      padding: calc(var(--blockSizeSmall) * 2) calc(var(--blockSizeSmall) * 2);
+
+      @media screen and (max-width: 800px) {
+        padding: calc(var(--blockSizeSmall) * 2) var(--blockSizeSmall);
+      }
     }
   }
 
-  &-type {
-    &--hero {
-      background-color: purple;
-    }
+  &-hero {
+    background-color: purple;
+  }
 
-    &--eng {
-      background-color: red;
-    }
+  &-eng {
+    background-color: red;
+  }
 
-    &--viz {
-      background-color: green;
-    }
+  &-viz {
+    background-color: green;
   }
 }

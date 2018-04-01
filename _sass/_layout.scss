@@ -1,4 +1,8 @@
-@mixin create-columns($int) {
+@mixin create-even-columns($int) {
+  $gutter-size: 1em;
+
+  grid-column-gap: $gutter-size;
+  grid-row-gap: $gutter-size;
   grid-template-columns: repeat($int, 1fr);
 
   @media screen and (max-width: 800px) {
@@ -8,16 +12,15 @@
 
 .l {
   &-master {
-    &-container {
-      display: grid;
-      grid-auto-rows: minmax(100vh, auto);
-      grid-template-areas:
-        'hero'
-        'eng'
-        'viz';
-    }
+    display: grid;
+    grid-auto-rows: minmax(100vh, auto);
+    grid-template-areas:
+      'hero'
+      'eng'
+      'viz';
+    grid-template-columns: 1fr;
 
-    &-area {
+    &__area {
       &--hero {
         grid-area: hero;
       }
@@ -38,12 +41,12 @@
 
     &--two-col {
       @extend .#{$extension};
-      @include create-columns(2);
+      @include create-even-columns(2);
     }
 
     &--three-col {
       @extend .#{$extension};
-      @include create-columns(3);
+      @include create-even-columns(3);
     }
   }
 }
