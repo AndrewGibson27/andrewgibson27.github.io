@@ -1,12 +1,51 @@
-@mixin create-even-columns($int) {
-  $gutter-size: 1em;
+$width-breaks: (
+  big: 1200px,
+  mid: 800px,
+  small: 400px
+);
 
-  grid-column-gap: $gutter-size;
-  grid-row-gap: $gutter-size;
-  grid-template-columns: repeat($int, 1fr);
+$gutter: 1em;
 
-  @media screen and (max-width: 800px) {
-    grid-template-columns: 1fr;
+@mixin basic-grid {
+  display: grid;
+  grid-column-gap: $gutter;
+  grid-row-gap: $gutter;
+}
+
+@mixin create-custom-columns($meta) {
+  @each $map in $meta {
+    $bp: map-get($map, 'bp');
+    $cols: map-get($map, 'cols');
+    $gutter: map-get($map, 'gutter');
+    $inclusive: map-get($map, 'inclusive');
+
+    @if $inclusive {
+      @include mq($from: $bp) {
+        grid-template-columns: $cols;
+        grid-column-gap: $gutter;
+        grid-row-gap: $gutter;
+      }
+    } @else {
+      @include mq($until: $bp) {
+        grid-template-columns: $cols;
+        grid-column-gap: $gutter;
+        grid-row-gap: $gutter;
+      }
+    }
+  }
+}
+
+@each $name, $width in $width-breaks {
+  .l-stack-until-#{$name} {
+    @include mq($until: $width) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  .l-stack-from-#{$name} {
+    @include mq($from: $width) {
+      grid-template-columns: 1fr !important;
+    }
   }
 }
 
@@ -36,17 +75,43 @@
   }
 
   &-wrapper {
-    $extension: l-wrapper;
-    display: grid;
-
-    &--two-col {
-      @extend .#{$extension};
-      @include create-even-columns(2);
+    &--2-col {
+      @include basic-grid;
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    &--three-col {
-      @extend .#{$extension};
-      @include create-even-columns(3);
+    &--3-col {
+      @include basic-grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--foo-col {
+      display: grid;
+      @include create-custom-columns((
+        (
+          bp: 1px,
+          cols: 1fr,
+          gutter: $gutter
+        ),
+        (
+          bp: map-get($width-breaks, 'small'),
+          cols: 1fr,
+          gutter: $gutter,
+          inclusive: true
+        ),
+        (
+          bp: map-get($width-breaks, 'mid'),
+          cols: repeat(3, 1fr),
+          gutter: $gutter,
+          inclusive: true
+        ),
+        (
+          bp: map-get($width-breaks, 'big'),
+          cols: 1fr,
+          gutter: $gutter,
+          inclusive: true
+        ),
+      ));
     }
   }
 }
