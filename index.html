@@ -4,51 +4,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Andrew Gibson</title>
+    <title>Andrew Gibson | Journalism and Technology</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | relative_url }}">
   </head>
 
   <body>
-    <main class="l-master">
-      <section class="l-master__area--hero l-wrapper--2-col l-stack-until-mid b-size--large b-hero">
-        <header class="c-intro">
-          <h1 class="t-title">Andrew Gibson</h1>
-          <h2 class="t-hed">Andrew Gibson slightly longer</h2>
-          <h3 class="t-subhed">Andrew Gibson slightly longer indeed</h3>
-        </header>
-        <div class="c-icons">
-          <p class="t-body">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-          </p>
-        </div>
-      </section>
-
-      <section class="l-master__area--eng l-wrapper--2-col b-size--base b-eng">
-        <header class="c-intro">
-          <h1 class="t-title">Andrew Gibson</h1>
-          <h2 class="t-hed">Andrew Gibson slightly longer</h2>
-          <h3 class="t-subhed">Andrew Gibson slightly longer indeed</h3>
-        </header>
-        <div class="c-icons">
-          <p class="t-body">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-          </p>
-        </div>
-      </section>
-
-      <section class="l-master__area--viz l-wrapper--2-col b-size--small b-viz">
-        <header class="c-intro">
-          <h1 class="t-title">Andrew Gibson</h1>
-          <h2 class="t-hed">Andrew Gibson slightly longer</h2>
-          <h3 class="t-subhed">Andrew Gibson slightly longer indeed</h3>
-        </header>
-        <div class="c-icons">
-          <p class="t-body">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-          </p>
-        </div>
-      </section>
+    <main class="l-template--master">
+      {% include blocks/intro.html %}
+      {% include blocks/eng.html %}
+      {% include blocks/viz.html %}
+      {% include blocks/skills.html %}
     </main>
   </body>
 </html>
