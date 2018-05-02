@@ -1,15 +1,9 @@
-$width-breaks: (
-  big: 1200px,
-  mid: 800px,
-  small: 400px
-);
-
 $gutter: 1em;
 
 @mixin basic-grid {
   display: grid;
   grid-column-gap: $gutter;
-  grid-row-gap: $gutter;
+  grid-row-gap: $gutter * 2;
 }
 
 @mixin create-custom-columns($meta) {
@@ -23,13 +17,13 @@ $gutter: 1em;
       @include mq($from: $bp) {
         grid-template-columns: $cols;
         grid-column-gap: $gutter;
-        grid-row-gap: $gutter;
+        grid-row-gap: $gutter * 2;
       }
     } @else {
       @include mq($until: $bp) {
         grid-template-columns: $cols;
         grid-column-gap: $gutter;
-        grid-row-gap: $gutter;
+        grid-row-gap: $gutter * 2;
       }
     }
   }
@@ -50,31 +44,43 @@ $gutter: 1em;
 }
 
 .l {
-  &-master {
-    display: grid;
-    grid-auto-rows: minmax(100vh, auto);
-    grid-template-areas:
-      'hero'
-      'eng'
-      'viz';
-    grid-template-columns: 1fr;
+  &-template {
+    &--master {
+      display: grid;
+      grid-auto-rows: minmax(100vh, auto);
+      grid-template-areas:
+        'hero'
+        'eng'
+        'viz'
+        'skills';
+      grid-template-columns: 1fr;
+    }
+  }
 
-    &__area {
-      &--hero {
-        grid-area: hero;
-      }
+  &-area {
+    &--hero {
+      grid-area: hero;
+    }
 
-      &--eng {
-        grid-area: eng;
-      }
+    &--eng {
+      grid-area: eng;
+    }
 
-      &--viz {
-        grid-area: viz;
-      }
+    &--viz {
+      grid-area: viz;
+    }
+
+    &--skills {
+      grid-area: skills;
     }
   }
 
   &-wrapper {
+    &--1-col {
+      @include basic-grid;
+      grid-template-columns: 1fr;
+    }
+
     &--2-col {
       @include basic-grid;
       grid-template-columns: repeat(2, 1fr);
@@ -85,32 +91,21 @@ $gutter: 1em;
       grid-template-columns: repeat(3, 1fr);
     }
 
-    &--foo-col {
+    &--3-of-4-col {
       display: grid;
       @include create-custom-columns((
         (
           bp: 1px,
-          cols: 1fr,
-          gutter: $gutter
-        ),
-        (
-          bp: map-get($width-breaks, 'small'),
           cols: 1fr,
           gutter: $gutter,
           inclusive: true
         ),
         (
           bp: map-get($width-breaks, 'mid'),
-          cols: repeat(3, 1fr),
+          cols: 3fr 1fr,
           gutter: $gutter,
           inclusive: true
-        ),
-        (
-          bp: map-get($width-breaks, 'big'),
-          cols: 1fr,
-          gutter: $gutter,
-          inclusive: true
-        ),
+        )
       ));
     }
   }

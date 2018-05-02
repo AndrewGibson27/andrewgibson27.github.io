@@ -52,6 +52,16 @@ html {
     font-size: var(--cmpntSizeSmall);
     margin-bottom: vertical-rhythm($cmpnt-size-small);
   }
+
+  &-section {
+    font-size: var(--cmpntSizeLarge);
+    margin-bottom: vertical-rhythm($cmpnt-size-large);
+  }
+
+  &-group {
+    font-size: var(--cmpntSizeSmall);
+    margin-bottom: vertical-rhythm($cmpnt-size-small);
+  }
 }
 
 [class^=t-]:last-child {

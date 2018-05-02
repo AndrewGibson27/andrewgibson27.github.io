@@ -1,1 +1,7 @@
+$width-breaks: (
+  big: 1200px,
+  mid: 800px,
+  small: 400px
+);
+
 @import '../node_modules/sass-mq/_mq';
