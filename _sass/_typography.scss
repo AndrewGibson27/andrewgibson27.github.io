@@ -1,27 +1,5 @@
-$base-size: 10;
-
-// https://css-tricks.com/snippets/sass/strip-unit-function/
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-  @return $number;
-}
-
-@function get-multiplier($numerator) {
-  @return ceil($numerator / $base-size);
-}
-
-@function vertical-rhythm($size) {
-  $size-in-px: $base-size * strip-unit($size);
-  $multiplier: get-multiplier($size-in-px);
-
-  @return ($multiplier * $base-size) / $size-in-px + em;
-}
-
 html {
   font-size: 62.5%;
-  line-height: 1.4;
 
   @media screen and (max-width: 800px) {
     font-size: 50%;
@@ -30,40 +8,4 @@ html {
   @media screen and (max-width: 500px) {
     font-size: 40%;
   }
-}
-
-.t {
-  &-title {
-    font-size: var(--cmpntSizeMega);
-    margin-bottom: vertical-rhythm($cmpnt-size-mega);
-  }
-
-  &-hed {
-    font-size: var(--cmpntSizeLarge);
-    margin-bottom: vertical-rhythm($cmpnt-size-large);
-  }
-
-  &-subhed {
-    font-size: var(--cmpntSizeBase);
-    margin-bottom: vertical-rhythm($cmpnt-size-base);
-  }
-
-  &-body {
-    font-size: var(--cmpntSizeSmall);
-    margin-bottom: vertical-rhythm($cmpnt-size-small);
-  }
-
-  &-section {
-    font-size: var(--cmpntSizeLarge);
-    margin-bottom: vertical-rhythm($cmpnt-size-large);
-  }
-
-  &-group {
-    font-size: var(--cmpntSizeSmall);
-    margin-bottom: vertical-rhythm($cmpnt-size-small);
-  }
-}
-
-[class^=t-]:last-child {
-  margin-bottom: 0;
 }

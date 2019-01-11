@@ -1,0 +1,15 @@
+/**
+  We want to use custom properties whenever possible. However,
+  Sass mixins don't get along well with those, so we also define
+  the values as Sass variables for those edge cases.
+*/
+
+$size-small: 2.3rem;
+$size-base: 2.7rem;
+$size-large: 3.1rem;
+
+:root {
+  --sizeSmall: 2.3rem;
+  --sizeBase: 2.7rem;
+  --sizeLarge: 3.1rem;
+}
