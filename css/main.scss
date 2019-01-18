@@ -5,6 +5,7 @@
 {% include css/normalize.css %}
 
 // mine
+@import 'mixins';
 @import 'reset';
 @import 'spacing';
 @import 'responsive';

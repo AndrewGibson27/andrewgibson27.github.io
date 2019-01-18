@@ -1,0 +1,14 @@
+@mixin create-breakpoint-classes {
+  @each $name, $size in $mq-breakpoints {
+    &--until-#{$name} {
+      @include mq($until: unquote("#{$name}")) {
+        @content;
+      }
+    }
+    &--from-#{$name} {
+      @include mq($from: unquote("#{$name}")) {
+        @content;
+      }
+    }
+  }
+}

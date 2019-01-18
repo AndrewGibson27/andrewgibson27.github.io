@@ -1,7 +1,9 @@
-$width-breaks: (
-  big: 1200px,
-  mid: 800px,
+$mq-responsive: true;
+
+$mq-breakpoints: (
+  large: 1200px,
+  medium: 800px,
   small: 400px
 );
 
-@import '../node_modules/sass-mq/_mq';
+@import "../node_modules/sass-mq/_mq";
