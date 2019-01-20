@@ -1,13 +1,11 @@
 ---
 ---
 
-// vendor
-{% include css/normalize.css %}
-
-// mine
-@import 'mixins';
-@import 'reset';
-@import 'spacing';
-@import 'responsive';
-@import 'layout';
-@import 'typography';
+@import "responsive";
+@import "colors";
+@import "sizes";
+@import "mixins";
+@import "reset";
+@import "spacing";
+@import "layout";
+@import "typography";

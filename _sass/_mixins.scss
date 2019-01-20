@@ -1,13 +1,38 @@
 @mixin create-breakpoint-classes {
-  @each $name, $size in $mq-breakpoints {
-    &--until-#{$name} {
+  @each $name, $width in $mq-breakpoints {
+    &--until-bp-#{$name} {
       @include mq($until: unquote("#{$name}")) {
         @content;
       }
     }
-    &--from-#{$name} {
+    &--from-bp-#{$name} {
       @include mq($from: unquote("#{$name}")) {
         @content;
+      }
+    }
+  }
+}
+
+@mixin create-size-classes($property) {
+  @each $name, $size in $size-map {
+    &--size-#{$name} {
+      #{$property}: $size;
+    }
+  }
+}
+
+@mixin create-size-breakpoint-classes($property) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @each $size-name, $size-value in $size-map {
+      &--size-#{$size-name}-until-bp-#{$bp-name} {
+        @include mq($until: unquote("#{$bp-name}")) {
+          #{$property}: $size-value;
+        }
+      }
+      &--size-#{$size-name}-from-bp-#{$bp-name} {
+        @include mq($from: unquote("#{$bp-name}")) {
+          #{$property}: $size-value;
+        }
       }
     }
   }
