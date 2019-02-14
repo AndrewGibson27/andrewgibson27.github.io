@@ -15,8 +15,15 @@
   "bugs": {
     "url": "https://github.com/AndrewGibson27/andrewgibson27.github.io/issues"
   },
+  "scripts": {
+    "icons": "gulp icons"
+  },
   "dependencies": {
     "normalize.css": "^8.0.0",
     "sass-mq": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-svg-sprite": "^1.5.0"
   }
 }

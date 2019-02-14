@@ -5,16 +5,12 @@
 <html>
   <head>
     <title>Andrew Gibson | Technology and Journalism</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | relative_url }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" }}">
   </head>
 
   <body>
-    <main>
-      {% include blocks/intro.html %}
-      {% include blocks/eng.html %}
-      {% include blocks/viz.html %}
-      {% include blocks/skills.html %}
-    </main>
+    <div style="display:none;">{% include svg/sprite.symbol.svg %}</div>
+    <main>{% include interests.html %}</main>
   </body>
 </html>

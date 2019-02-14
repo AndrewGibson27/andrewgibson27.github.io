@@ -1,11 +1,17 @@
 ---
 ---
 
+@import "reset/reset";
+@import "reset/normalize";
+
 @import "responsive";
-@import "colors";
 @import "sizes";
 @import "mixins";
-@import "reset";
 @import "spacing";
-@import "layout";
+@import "colors";
 @import "typography";
+
+@import "layout/grid";
+@import "layout/sections";
+@import "components/icons";
+@import "components/interests-grid";

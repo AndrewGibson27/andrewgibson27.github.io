@@ -65,9 +65,3 @@
     @include create-size-classes("grid-row-gap");
   }
 }
-
-.l-section {
-  &--full-vh {
-    height: 100vh;
-  }
-}
