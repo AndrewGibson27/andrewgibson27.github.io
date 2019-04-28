@@ -1,0 +1,59 @@
+.c-viz {
+  display: grid;
+  grid-template-columns: 40rem repeat(2, 1fr);
+  grid-template-areas:
+    "header top-left top-right"
+    "header bottom-left bottom-right";
+
+  &__header {
+    background-color: $color-bright;
+    grid-area: header;
+  }
+
+  &__top-left {
+    border-bottom: 1px solid $color-light-accent;
+    border-right: 1px solid $color-light-accent;
+    grid-area: top-left;
+  }
+
+  &__top-right {
+    border-bottom: 1px solid $color-light-accent;
+    grid-area: top-right;
+  }
+
+  &__bottom-left {
+    border-right: 1px solid $color-light-accent;
+    grid-area: bottom-left;
+  }
+
+  &__bottom-right {
+    grid-area: bottom-right;
+  }
+
+  &__icon-container {
+    max-width: 15rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+
+    @include mq($until: wide) {
+      font-size: 5.5rem;
+    }
+  }
+
+  @include mq($until: wide) {
+    background-color: $color-light-accent;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "top-left"
+      "top-right"
+      "bottom-left"
+      "bottom-right";
+
+    > * {
+      border: none;
+    }
+  }
+}

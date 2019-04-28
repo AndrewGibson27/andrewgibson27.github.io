@@ -7,10 +7,34 @@
     <title>Andrew Gibson | Technology and Journalism</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" }}">
+    <link
+      rel="preload"
+      href="/fonts/quicksand-subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.1.0/fontfaceobserver.standalone.js"></script>
+    <script>
+      const primaryRegular = new FontFaceObserver("Quicksand");
+      const primaryBold = new FontFaceObserver("Quicksand", { weight: 700 });
+
+      Promise.all([
+        primaryRegular.load(null, 10000),
+        primaryBold.load(null, 10000)
+      ]).then(function() {
+        document.documentElement.className += " t-stage-1-loaded";
+      });
+    </script>
   </head>
 
   <body>
     <div style="display:none;">{% include svg/sprite.symbol.svg %}</div>
-    <main>{% include interests.html %}</main>
+    <main>
+      <div>{% include intro.html %}</div>
+      <div>{% include interests.html %}</div>
+      <div>{% include community.html %}</div>
+      <div>{% include viz.html %}</div>
+    </main>
   </body>
 </html>

@@ -1,5 +1,13 @@
 .l-section {
-  &--full-vh {
+  &--max-full-vh {
     height: 100vh;
+  }
+
+  &--min-full-vh {
+    min-height: 100vh;
+  }
+
+  &--min-45 {
+    min-height: 45rem;
   }
 }

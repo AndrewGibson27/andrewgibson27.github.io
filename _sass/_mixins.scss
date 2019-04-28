@@ -29,6 +29,7 @@
           #{$property}: $size-value;
         }
       }
+
       &--size-#{$size-name}-from-bp-#{$bp-name} {
         @include mq($from: unquote("#{$bp-name}")) {
           #{$property}: $size-value;

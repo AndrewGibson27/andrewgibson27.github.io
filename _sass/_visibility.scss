@@ -1,0 +1,5 @@
+.u-hide {
+  @include create-breakpoint-classes {
+    display: none !important;
+  }
+}

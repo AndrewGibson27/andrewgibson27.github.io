@@ -11,6 +11,13 @@
   }
 
   &__item {
+    background: gray;
+    border: 1px solid white;
+
+    img {
+      visibility: hidden;
+    }
+
     @include mq($until: medium) {
       grid-column: auto;
       grid-row: auto;
