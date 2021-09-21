@@ -1,40 +1,142 @@
----
----
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Andrew Gibson | Technology and Journalism</title>
+    <title>Andrew Gibson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" }}">
-    <link
-      rel="preload"
-      href="/fonts/quicksand-subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.1.0/fontfaceobserver.standalone.js"></script>
-    <script>
-      const primaryRegular = new FontFaceObserver("Quicksand");
-      const primaryBold = new FontFaceObserver("Quicksand", { weight: 700 });
 
-      Promise.all([
-        primaryRegular.load(null, 10000),
-        primaryBold.load(null, 10000)
-      ]).then(function() {
-        document.documentElement.className += " t-stage-1-loaded";
-      });
-    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
 
+  <!--
+    Raleway font used from Google Fonts under the SIL Open Font License:
+    - https://fonts.google.com/specimen/Raleway#license
+    - https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+  -->
+
   <body>
-    <div style="display:none;">{% include svg/sprite.symbol.svg %}</div>
     <main>
-      <div>{% include intro.html %}</div>
-      <div>{% include interests.html %}</div>
-      <div>{% include community.html %}</div>
-      <div>{% include viz.html %}</div>
+      <article>
+        <h1>Andrew Gibson</h1>
+
+        <p>
+          I’m an Austin-based scrum master working at Charles Schwab. I hold
+          <a
+            href="https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster"
+            >Certified ScrumMaster</a
+          >
+          and
+          <a href="https://www.pmi.org/certifications/certified-associate-capm"
+            >Certified Associate in Project Management</a
+          >
+          credentials.
+        </p>
+
+        <p>
+          Previously, I worked as a senior front-end engineer at
+          <a href="https://www.texastribune.org/">The Texas Tribune</a>, a
+          nonprofit news organization focusing on politics and policy. I helped
+          build, maintain and improve in-house apps and sites. This included the
+          core website and CMS,
+          <a href="https://support.texastribune.org/donate">donation platform</a
+          >,
+          <a
+            href="https://github.com/texastribune/donations/tree/master/static/js/src/entry/account"
+            >user portal</a
+          >
+          and <a href="https://github.com/texastribune/dot">pixel tracker</a>. I
+          focused primarily on JavaScript. I also led sprint plannings, helped
+          maintain the engineering backlog and managed third-party development
+          of the Texas Tribune Festival
+          <a href="https://festival.texastribune.org/">website</a>.
+        </p>
+
+        <p>
+          Before that, I worked at the Orlando Sentinel. I built interactive
+          <a
+            href="http://interactive.orlandosentinel.com/focus-on-force/main/index.html"
+            >projects</a
+          >,
+          <a
+            href="http://interactive.orlandosentinel.com/elections/2016/presidential-primary/results/gop.html"
+            >maps</a
+          >,
+          <a href="http://guides.orlandosentinel.com/summer-camps/">databases</a
+          >,
+          <a href="http://interactive.orlandosentinel.com/magic-draft/"
+            >graphics</a
+          >
+          and
+          <a
+            href="http://interactive.orlandosentinel.com/quiz/central-florida-lakes/"
+            >quizzes</a
+          >. I was also the core developer in charge of delivering election
+          results for the Central Florida and the Fort Lauderdale areas.
+        </p>
+
+        <p>
+          For about two years, I was co-organizer of the
+          <a href="https://www.meetup.com/austin-web-performance/"
+            >Austin Web Performance meetup</a
+          >. I’ve also helped organize a few hackathons (<a
+            href="https://isoj.org/hackathon-participants-build-tools-to-measure-and-boost-trust-in-news-during-pre-isoj-event/"
+            >this one</a
+          >
+          and
+          <a
+            href="https://codehangar.io/orlando-devs-hack-florida-legislature-tabs-on-tallahassee-hackathon/"
+            >this one</a
+          >).
+        </p>
+
+        <p>
+          I’ve spoken at the
+          <a href="https://isoj.org/speakers-2019/andrew-gibson/"
+            >International Symposium for Online Journalism</a
+          >
+          in Austin, the National High School Journalism Convention in D.C., and
+          News Xchange in Marrakesh, Morocco.
+        </p>
+
+        <p>
+          I’m a
+          <a href="https://journalism.missouri.edu/"
+            >Missouri School of Journalism</a
+          >
+          alumnus and native of the Denver area. Go Broncos.
+        </p>
+
+        <p>
+          Here is my <a href="https://github.com/andrewgibson27">Github</a>.
+          Here is my <a href="https://twitter.com/andrewgibson27">Twitter</a>.
+        </p>
+
+        <p>
+          This page uses the
+          <a href="https://fonts.google.com/specimen/Raleway#license"
+            >Raleway font</a
+          >
+          (via Google Fonts) under the
+          <a
+            href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+            >SIL Open Font License</a
+          >.
+        </p>
+      </article>
     </main>
   </body>
+
+  <script src="./animate.js"></script>
 </html>

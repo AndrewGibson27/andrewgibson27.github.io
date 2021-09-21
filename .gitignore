@@ -1,10 +1,4 @@
-_site
-.sass-cache
-.jekyll-metadata
-node_modules
-_includes/svg/
+node_modules/
+
 .*
 !.gitignore
-!.eslintrc
-!.babelrc
-!.ruby-version
